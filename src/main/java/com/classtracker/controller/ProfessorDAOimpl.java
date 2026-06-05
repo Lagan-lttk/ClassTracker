@@ -1,5 +1,6 @@
 package com.classtracker.controller;
 
+import com.classtracker.model.Aluno;
 import com.classtracker.model.Professor;
 import com.classtracker.util.DBConnection;
 
@@ -46,8 +47,18 @@ public class ProfessorDAOimpl implements ProfesorDAO {
     }
 
     @Override
-    public Professor getProfessor(String cpf) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Professor getProfessor(String cpf) throws SQLException {
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM  ALUNO WHERE MATRICULA = ?");
+        ps.setString(1, cpf);
+
+        ResultSet rs = ps.executeQuery();
+
+        Professor professor = null;
+
+        if (rs.next())
+            professor = new Professor(rs.getString(4),rs.getString(5),rs.getString(3),
+                    rs.getString(2),rs.getString(6));
+        return professor;
     }
 
     @Override

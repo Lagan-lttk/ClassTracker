@@ -5,10 +5,11 @@ import com.classtracker.util.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class AlunoDAOImpl implements AlunoDAO {
 
@@ -18,14 +19,14 @@ public class AlunoDAOImpl implements AlunoDAO {
     public void insertAluno(Aluno aluno) throws SQLException {
 
         PreparedStatement ps =
-                connection.prepareStatement("INSERT INTO ALUNO VALUES(?,?,?,?,?,?,?);");
+                connection.prepareStatement("INSERT INTO ALUNO VALUES(?,?,?,?,?,?);");
         ps.setInt(1, aluno.getId_aluno());
         ps.setString(2, aluno.getNome());
         ps.setString(3, aluno.getMatricula());
         ps.setString(4, aluno.getData_de_nascimento());
         ps.setString(5, aluno.getCpf());
         ps.setString(6, aluno.getCurso());
-
+        ps.executeUpdate();
     };
 
     @Override
@@ -38,9 +39,20 @@ public class AlunoDAOImpl implements AlunoDAO {
     }
 
     @Override
-    public Aluno getAluno(String matricula) {
-        return null;
-    }
+    public Aluno getAluno(String matricula) throws SQLException {
+
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM  ALUNO WHERE MATRICULA = ?");
+        ps.setString(1, matricula);
+
+        ResultSet rs = ps.executeQuery();
+
+        Aluno aluno = null;
+
+        if (rs.next())
+            aluno = new Aluno(rs.getString(5),rs.getString(6),rs.getString(4),
+                    rs.getString(3),rs.getString(2));
+        return aluno;
+    };
 
     @Override
     public void updateAluno(Aluno antigo, Aluno novo) {
@@ -48,7 +60,21 @@ public class AlunoDAOImpl implements AlunoDAO {
     }
 
     @Override
-    public List<Aluno> getAlunos() {
-        return List.of();
+    public List<String> getAlunos() throws SQLException {
+
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM ALUNO");
+
+        ResultSet rs = ps.executeQuery();
+        List<String> listaAlunos = new ArrayList<>();
+
+        Aluno aluno;
+
+        while(rs.next()){
+            aluno = new Aluno(rs.getString(5),rs.getString(6),rs.getString(4),
+                    rs.getString(3),rs.getString(2));
+            listaAlunos.add(aluno.getNome());
+        }
+
+        return  listaAlunos;
     }
 }

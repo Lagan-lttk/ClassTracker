@@ -2,6 +2,7 @@ package com.classtracker.controller;
 
 import com.classtracker.model.Aluno;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -11,10 +12,10 @@ public interface AlunoDAO {
 
     public void deleteAluno (Aluno aluno) throws SQLException;
 
-    public Aluno getAluno(String matricula);
+    public Aluno getAluno(String matricula) throws SQLException;
 
     public void updateAluno(Aluno antigo, Aluno novo);
 
-    public List<Aluno> getAlunos();
+    public List<String> getAlunos() throws SQLException;
 
 }

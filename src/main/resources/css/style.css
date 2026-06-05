@@ -1,0 +1,13 @@
+.Card:hover {
+    -fx-border-color: #2EC4D6;
+    -fx-border-width: 2;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(46,196,214,0.35),
+        20,
+        0,
+        0,
+        6
+    );
+}
