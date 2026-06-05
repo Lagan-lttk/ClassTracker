@@ -55,8 +55,19 @@ public class AlunoDAOImpl implements AlunoDAO {
     };
 
     @Override
-    public void updateAluno(Aluno antigo, Aluno novo) {
+    public void updateAluno(Aluno antigo, Aluno novo) throws SQLException {
 
+        PreparedStatement ps = connection.prepareStatement("UPDATE ALUNO SET NOME = ?, MATRICULA = ?, DATA_DE_NASCIMENTO = ?, CPF = ?, CURSO = ? WHERE CPF = ?");
+
+        ps.setString(1, novo.getNome());
+        ps.setString(2, novo.getMatricula());
+        ps.setString(3, novo.getData_de_nascimento());
+        ps.setString(4, novo.getCpf());
+        ps.setString(5, novo.getCurso());
+
+        ps.setString(6, antigo.getCpf());
+
+        ps.executeUpdate();
     }
 
     @Override
