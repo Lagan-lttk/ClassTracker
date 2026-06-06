@@ -2,18 +2,19 @@ package com.classtracker.controller;
 
 import com.classtracker.model.Turma;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface TurmaDAO {
 
-    public void insertTurma(Turma turma);
+    public void insertTurma(Turma turma) throws SQLException;
 
-    public void deleteAluno (Turma turma);
+    public void deleteAluno (Turma turma) throws SQLException;
 
-    public Turma getTurma(String idTurma);
+    public Turma getTurma(String idTurma) throws SQLException;
 
-    public void updateTurma(Turma antiga, Turma nova);
+    public void updateTurma(Turma antiga, Turma nova) throws SQLException;
 
-    public List<Turma> getTurmas();
+    public List<Integer> getTurmas() throws SQLException;
 
 }

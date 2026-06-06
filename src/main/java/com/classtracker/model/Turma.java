@@ -2,13 +2,14 @@ package com.classtracker.model;
 
 public class Turma {
 
-    private int id_curso;
+    private int id_turma;
     private String curso;
     private int tamanho;
     private String turno;
 
-    public Turma(String curso, int tamanho, String turno) {
+    public Turma(String curso, int id_turma, int tamanho, String turno) {
         this.curso = curso;
+        this.id_turma = id_turma;
         this.tamanho = tamanho;
         this.turno = turno;
     }
@@ -21,12 +22,12 @@ public class Turma {
         this.curso = curso;
     }
 
-    public int getId_curso() {
-        return id_curso;
+    public int getId_turma() {
+        return id_turma;
     }
 
-    public void setId_curso(int id_curso) {
-        this.id_curso = id_curso;
+    public void setId_turma(int id_turma) {
+        this.id_turma = id_turma;
     }
 
     public int getTamanho() {

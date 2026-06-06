@@ -42,21 +42,5 @@ public class ClassTracker extends Application {
         launch(args);
     }
 
-    @Override
-    public void start(Stage stage) throws Exception {
 
-        stage.getIcons().add(
-                new Image(getClass().getResourceAsStream("/images/ClassTrackerLogo1-removebg-preview.png"))
-        );
-
-        FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/view/MainMenu.fxml")
-        );
-
-        Scene scene = new Scene(loader.load());
-
-        stage.setTitle("Class Tracker");
-        stage.setScene(scene);
-        stage.show();
-    }
 }
