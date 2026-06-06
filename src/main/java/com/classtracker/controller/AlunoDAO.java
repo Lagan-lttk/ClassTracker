@@ -14,7 +14,7 @@ public interface AlunoDAO {
 
     public Aluno getAluno(String matricula) throws SQLException;
 
-    public void updateAluno(Aluno antigo, Aluno novo);
+    public void updateAluno(Aluno antigo, Aluno novo) throws SQLException;
 
     public List<String> getAlunos() throws SQLException;
 
