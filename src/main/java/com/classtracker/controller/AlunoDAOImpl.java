@@ -26,7 +26,6 @@ public class AlunoDAOImpl implements AlunoDAO {
         ps.setString(4, aluno.getData_de_nascimento());
         ps.setString(5, aluno.getCpf());
         ps.setString(6, aluno.getCurso());
-
         ps.executeUpdate();
     };
 
@@ -57,6 +56,7 @@ public class AlunoDAOImpl implements AlunoDAO {
 
     @Override
     public void updateAluno(Aluno antigo, Aluno novo) throws SQLException {
+
         PreparedStatement ps = connection.prepareStatement("UPDATE ALUNO SET NOME = ?, MATRICULA = ?, DATA_DE_NASCIMENTO = ?, CPF = ?, CURSO = ? WHERE CPF = ?");
 
         ps.setString(1, novo.getNome());
@@ -68,7 +68,7 @@ public class AlunoDAOImpl implements AlunoDAO {
         ps.setString(6, antigo.getCpf());
 
         ps.executeUpdate();
-    };
+    }
 
     @Override
     public List<String> getAlunos() throws SQLException {
