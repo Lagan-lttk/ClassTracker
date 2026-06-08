@@ -17,12 +17,13 @@ public class SalaDAOimpl implements SalaDAO {
     @Override
     public void insertSala(Sala sala) throws SQLException {
 
-        PreparedStatement ps = connection.prepareStatement("INSERT INTO SALA (BLOCO, CAPACIDADE, NUMERO, TIPO) VALUES (?, ?, ?, ?)");
+        PreparedStatement ps = connection.prepareStatement("INSERT INTO SALA (BLOCO, CAPACIDADE, NUMERO, TIPO, DISPONIBILIDADE) VALUES (?, ?, ?, ?, ?)");
 
         ps.setString(1, sala.getBloco());
         ps.setInt(2, sala.getCapacidade());
         ps.setInt(3, sala.getNumero());
         ps.setString(4, sala.getTipo());
+        ps.setString(5, sala.getDisponibilidade());
 
         ps.executeUpdate();
         ps.close();
@@ -40,7 +41,7 @@ public class SalaDAOimpl implements SalaDAO {
     }
 
     @Override
-    public Sala getSala(int numero) throws SQLException {
+    public String getSala(int numero) throws SQLException {
 
         PreparedStatement ps = connection.prepareStatement("SELECT * FROM SALA WHERE NUMERO = ?");
 
@@ -53,16 +54,17 @@ public class SalaDAOimpl implements SalaDAO {
         if (rs.next()) {
             sala = new Sala(
                     rs.getString("BLOCO"),
-                    rs.getInt("CAPACIDADE"),
                     rs.getInt("NUMERO"),
-                    rs.getString("TIPO")
+                    rs.getString("TIPO"),
+                    rs.getString("DISPONIBILIDADE"),
+                    rs.getInt("CAPACIDADE")
             );
         }
 
         rs.close();
         ps.close();
 
-        return sala;
+        return sala.getDisponibilidade();
     }
 
     @Override
@@ -82,9 +84,9 @@ public class SalaDAOimpl implements SalaDAO {
     }
 
     @Override
-    public List<Sala> getSalas() throws SQLException {
+    public List<Integer> getSalas() throws SQLException {
 
-        List<Sala> salas = new ArrayList<>();
+        List<Integer> salas = new ArrayList<>();
 
         PreparedStatement ps = connection.prepareStatement("SELECT * FROM SALA");
 
@@ -93,12 +95,13 @@ public class SalaDAOimpl implements SalaDAO {
         while (rs.next()) {
             Sala sala = new Sala(
                     rs.getString("BLOCO"),
-                    rs.getInt("CAPACIDADE"),
                     rs.getInt("NUMERO"),
-                    rs.getString("TIPO")
+                    rs.getString("TIPO"),
+                    rs.getString("DISPONIBILIDADE"),
+                    rs.getInt("CAPACIDADE")
             );
 
-            salas.add(sala);
+            salas.add(sala.getNumero());
         }
 
         rs.close();

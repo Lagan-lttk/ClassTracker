@@ -3,21 +3,23 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.BoxBlur?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="744.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.classtracker.controller.MenuController">
+<Pane maxHeight="-Infinity" stylesheets="@../css/menu.css" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="744.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.classtracker.controller.MenuController">
    <children>
       <ImageView fitHeight="470.0" fitWidth="744.0" pickOnBounds="true">
          <image>
-            <Image url="/images/backImage.png" />
+            <Image url="@../images/backImage.png" />
          </image>
       </ImageView>
       <HBox layoutY="52.0" maxWidth="-Infinity" prefHeight="413.0" prefWidth="744.0" style="-fx-background-image: url(;">
@@ -35,15 +37,15 @@
                   </Pane>
                   <ImageView fitHeight="183.0" fitWidth="259.0" layoutX="-8.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="/images/IconBack-removebg-preview.png" />
+                        <Image url="@../images/IconBack-removebg-preview.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="249.0" fitWidth="282.0" layoutX="-3.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="/images/AlunoAvatar-removebg-preview.png" />
+                        <Image url="@../images/AlunoAvatar-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="40.0" layoutY="300.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" onAction="#abrirMenu" style="-fx-background-radius: 50; -fx-background-color: #2DC8D6;" text="Entrar      ➡" textFill="WHITE">
+                  <Button layoutX="40.0" layoutY="300.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" style="-fx-background-radius: 50; -fx-background-color: #2DC8D6;" text="Entrar      ➡" textFill="WHITE">
                      <font>
                         <Font name="Dubai Bold" size="18.0" />
                      </font>
@@ -71,10 +73,10 @@
                   </Pane>
                   <ImageView fitHeight="249.0" fitWidth="282.0" layoutX="2.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="/images/Reserva-removebg-preview.png" />
+                        <Image url="@../images/Reserva-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="45.0" layoutY="301.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" onAction="#abrirMenu" style="-fx-background-radius: 50; -fx-background-color: #2DC8D6;" text="Entrar      ➡" textAlignment="CENTER" textFill="WHITE">
+                  <Button layoutX="45.0" layoutY="301.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" style="-fx-background-radius: 50; -fx-background-color: #2DC8D6;" text="Entrar      ➡" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Dubai Bold" size="18.0" />
                      </font>
@@ -102,15 +104,15 @@
                   </Pane>
                   <ImageView fitHeight="183.0" fitWidth="259.0" layoutX="-4.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="/images/IconBack-removebg-preview.png" />
+                        <Image url="@../images/IconBack-removebg-preview.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="249.0" fitWidth="264.0" layoutX="1.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="/images/professorLogo-removebg-preview.png" />
+                        <Image url="@../images/professorLogo-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="44.0" layoutY="300.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" onAction="#abrirMenu" style="-fx-background-radius: 50; -fx-background-color: #2DC8D6;" text="Entrar      ➡" textFill="WHITE">
+                  <Button layoutX="44.0" layoutY="300.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" style="-fx-background-radius: 50; -fx-background-color: #2DC8D6;" text="Entrar      ➡" textFill="WHITE">
                      <font>
                         <Font name="Dubai Bold" size="18.0" />
                      </font>
@@ -126,12 +128,15 @@
                </children>
             </AnchorPane>
          </children>
+         <effect>
+            <BoxBlur height="11.0" width="8.0" />
+         </effect>
       </HBox>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="744.0" style="-fx-background-color: #2DC8D6;">
          <children>
             <ImageView fitHeight="59.0" fitWidth="63.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="/images/ClassTrackerLogo1-removebg-preview.png" />
+                  <Image url="@../images/ClassTrackerLogo1-removebg-preview.png" />
                </image>
             </ImageView>
             <Label layoutX="52.0" layoutY="-3.0" maxHeight="-Infinity" prefHeight="45.0" prefWidth="390.0" text="Class Tracker" textOverrun="CLIP">
@@ -148,5 +153,20 @@
             </DropShadow>
          </effect>
       </AnchorPane>
+      <AnchorPane layoutX="185.0" layoutY="70.0" prefHeight="207.0" prefWidth="369.0" style="-fx-background-color: #2DC8D6; -fx-background-radius: 20;">
+         <children>
+            <Label layoutX="80.0" layoutY="30.0" prefHeight="51.0" prefWidth="228.0" styleClass="TitleChoice" text="Selecione o Menu">
+               <font>
+                  <Font name="Dubai Medium" size="29.0" />
+               </font>
+            </Label>
+            <Button layoutX="43.0" layoutY="123.0" mnemonicParsing="false" prefHeight="38.0" onAction="#abrirMenuDesc" prefWidth="97.0" styleClass="informacoesButton" text="Infos" />
+            <Button layoutX="229.0" layoutY="123.0" mnemonicParsing="false" prefHeight="38.0" onAction="#abrirMenuInserir" prefWidth="97.0" styleClass="AdminButton" text="Admin" />
+            <Line endX="105.0" layoutX="189.0" layoutY="71.0" startX="-112.0" stroke="WHITE" />
+         </children>
+      </AnchorPane>
    </children>
+   <effect>
+      <DropShadow />
+   </effect>
 </Pane>

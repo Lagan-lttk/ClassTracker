@@ -35,7 +35,7 @@ public class ReservaDAOimpl implements ReservaDAO{
     @Override
     public void deleteReserva(Reserva reserva) throws SQLException {
         PreparedStatement ps;
-        ps = connection.prepareStatement("DELETE FROM RESERVA WHERE ID = ?");
+        ps = connection.prepareStatement("DELETE FROM RESERVA WHERE ID_RESERVA = ?");
         ps.setInt(1, reserva.getId_reserva());
         ps.executeUpdate();
     }

@@ -48,7 +48,7 @@ public class ProfessorDAOimpl implements ProfesorDAO {
 
     @Override
     public Professor getProfessor(String cpf) throws SQLException {
-        PreparedStatement ps = conn.prepareStatement("SELECT * FROM  ALUNO WHERE MATRICULA = ?");
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM PROFESSOR WHERE MATRICULA = ?");
         ps.setString(1, cpf);
 
         ResultSet rs = ps.executeQuery();

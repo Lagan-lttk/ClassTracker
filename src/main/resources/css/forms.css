@@ -1,0 +1,93 @@
+.buttonClear {
+    -fx-background-color: white;
+    -fx-text-fill: #2EC4D6;
+
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+
+    -fx-border-color: #2EC4D6;
+    -fx-border-width: 2;
+
+    -fx-cursor: hand;
+}
+
+.buttonClear:hover {
+    -fx-background-color: #F5FDFF;
+}
+
+.buttonClear:pressed {
+    -fx-background-color: #E8F9FC;
+}
+
+.buttonExclude {
+    -fx-background-color: #2EC4D6;
+    -fx-text-fill: white;
+
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+
+    -fx-cursor: hand;
+}
+
+.buttonExclude:hover {
+    -fx-background-color: #26B4C4;
+}
+
+.buttonExclude:pressed {
+    -fx-background-color: #1EA3B2;
+}
+
+.buttonInsert {
+    -fx-background-color: #2EC4D6;
+    -fx-text-fill: white;
+
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+
+    -fx-cursor: hand;
+}
+
+.buttonInsert:hover {
+    -fx-background-color: #26B4C4;
+}
+
+.buttonInsert:pressed {
+    -fx-background-color: #1EA3B2;
+}
+
+.buttonDelete {
+    -fx-background-color: #2EC4D6;
+    -fx-text-fill: white;
+
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+
+    -fx-cursor: hand;
+}
+
+.buttonDelete:hover {
+    -fx-background-color: #26B4C4;
+}
+
+.buttonDelete:pressed {
+    -fx-background-color: #1EA3B2;
+}
+
+.background-pane {
+    -fx-background-image: url('/images/backImage.png');
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}

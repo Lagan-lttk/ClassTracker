@@ -62,12 +62,14 @@ public class TurmaDAOimpl implements TurmaDAO{
         ps.setInt(2, nova.getTamanho());
         ps.setString(3, nova.getTurno());
         ps.setInt(4, antiga.getId_turma()); // ID_TURMA por isso utilizar o atributo antiga ao invés do novo.
+
+        ps.executeUpdate();
     }
 
     @Override
     public List<Integer> getTurmas() throws SQLException {
 
-        PreparedStatement ps = connection.prepareStatement("SELECT * FROM ALUNO");
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM TURMA");
 
         ResultSet rs = ps.executeQuery();
         List<Integer> listaTurmas = new ArrayList<>();

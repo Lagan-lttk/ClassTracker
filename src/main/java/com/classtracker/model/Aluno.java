@@ -17,6 +17,10 @@ public class Aluno {
         this.nome = nome;
     }
 
+    public Aluno(String matricula) {
+        this.matricula = matricula;
+    }
+
     public String getCpf() {
         return cpf;
     }

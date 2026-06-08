@@ -7,12 +7,14 @@ public class Sala {
     private int capacidade;
     private String bloco;
     private int numero;
+    private String disponibilidade;
 
-    public Sala(String bloco, int capacidade, int numero, String tipo) {
+    public Sala(String bloco, int numero, String tipo, String disponibilidade, int capacidade) {
         this.bloco = bloco;
-        this.capacidade = capacidade;
         this.numero = numero;
         this.tipo = tipo;
+        this.disponibilidade = disponibilidade;
+        this.capacidade = capacidade;
     }
 
     public String getBloco() {
@@ -29,6 +31,14 @@ public class Sala {
 
     public void setCapacidade(int capacidade) {
         this.capacidade = capacidade;
+    }
+
+    public String getDisponibilidade() {
+        return disponibilidade;
+    }
+
+    public void setDisponibilidade(String disponibilidade) {
+        this.disponibilidade = disponibilidade;
     }
 
     public int getId_sala() {

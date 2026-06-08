@@ -32,8 +32,8 @@ public class AlunoDAOImpl implements AlunoDAO {
     @Override
     public void deleteAluno(Aluno aluno) throws SQLException {
         PreparedStatement ps;
-        ps = connection.prepareStatement("DELETE FROM ALUNO WHERE CPF = ?");
-        ps.setString(1, aluno.getCpf());
+        ps = connection.prepareStatement("DELETE FROM ALUNO WHERE MATRICULA = ?");
+        ps.setString(1, aluno.getMatricula());
         ps.executeUpdate();
 
     }
