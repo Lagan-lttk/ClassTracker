@@ -11,7 +11,7 @@ public interface SalaDAO {
 
     public void deleteSala (Sala sala) throws SQLException;
 
-    public String getSala(int numero) throws SQLException;
+    public Sala getSala(int numero) throws SQLException;
 
     public void updateSala(Sala antiga, Sala novo) throws SQLException;
 

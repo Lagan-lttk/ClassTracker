@@ -1,6 +1,7 @@
 package com.classtracker.controller;
 
 import com.classtracker.model.Aluno;
+import com.classtracker.model.Sala;
 import com.classtracker.util.DBConnection;
 
 import java.sql.Connection;
@@ -52,6 +53,36 @@ public class AlunoDAOImpl implements AlunoDAO {
             aluno = new Aluno(rs.getString(5),rs.getString(6),rs.getString(4),
                     rs.getString(3),rs.getString(2));
         return aluno;
+    }
+
+    @Override
+    public Sala getSalaPorAluno(Aluno aluno) throws SQLException {
+
+        PreparedStatement ps = connection.prepareStatement("SELECT s.*\n" +
+                "FROM sala s\n" +
+                "INNER JOIN reserva r\n" +
+                "    ON s.id_sala = r.id_sala\n" +
+                "INNER JOIN turma t\n" +
+                "    ON r.id_turma = t.id_turma\n" +
+                "INNER JOIN aluno_por_turma apt\n" +
+                "    ON t.id_turma = apt.id_turma\n" +
+                "INNER JOIN aluno a\n" +
+                "    ON apt.id_aluno = a.id_aluno\n" +
+                "WHERE a.id_aluno = ?;");
+        ps.setString(1, aluno.getMatricula());
+
+        ResultSet rs = ps.executeQuery();
+
+        Sala sala = null;
+
+        if (!rs.next()) {
+            return new Sala("", 0, "", "", 0);
+        }
+        if (rs.next())
+            sala = new Sala(rs.getString(4),rs.getInt(5),rs.getString(2),
+                    rs.getString(6),rs.getInt(3));
+
+        return sala;
     };
 
     @Override

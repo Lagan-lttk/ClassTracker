@@ -41,7 +41,7 @@ public class SalaDAOimpl implements SalaDAO {
     }
 
     @Override
-    public String getSala(int numero) throws SQLException {
+    public Sala getSala(int numero) throws SQLException {
 
         PreparedStatement ps = connection.prepareStatement("SELECT * FROM SALA WHERE NUMERO = ?");
 
@@ -64,7 +64,7 @@ public class SalaDAOimpl implements SalaDAO {
         rs.close();
         ps.close();
 
-        return sala.getDisponibilidade();
+        return sala;
     }
 
     @Override

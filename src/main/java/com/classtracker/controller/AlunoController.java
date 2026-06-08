@@ -44,6 +44,7 @@ public class AlunoController {
 
 
     AlunoDAOImpl alunoDAO = new AlunoDAOImpl();
+    ConsultaDAOImpl consultaAlunoDAO = new ConsultaDAOImpl();
 
     public void setMatricula(String matricula) {
         alunoMatricula.setText("Matrícula: " + matricula);
@@ -131,15 +132,17 @@ public class AlunoController {
         String matricula = txtSelecionado.getText();
         String alunonome = alunoDAO.getAluno(matricula).getNome();
 
-        /*String numeroSala = alunoDAO.getAluno(matricula).
-        String blocoSala = salaBloco.getText();
-        String capacidadeSala = salaCapacidade.getText();
-        String cursoTurma = turmaCurso.getText();
-        String qntdAlunosTurma = turmaQtndAlunos.getText();
-        String professorTurma = turmaProfessor.getText();
-        String dataAgenda = agendaData.getText();
-        String horaAgenda = agendaHora.getText();
-        String turnoAgenda = agendaTurno.getText();*/
+        String numeroSala = consultaAlunoDAO.buscarSalaPorAluno(matricula);
+        String blocoSala = consultaAlunoDAO.buscarBlocoDaSalaPorAluno(matricula);
+        int capacidadeSala = consultaAlunoDAO.buscarCapacidadeDaSalaPorAluno(matricula);
+
+        String cursoTurma = consultaAlunoDAO.buscarCursoDaTurmaDoAluno(matricula);
+        String qntdAlunosTurma = String.valueOf(consultaAlunoDAO.buscarQuantidadeAlunosDaTurmaDoAluno(matricula));
+
+        String professorTurma = consultaAlunoDAO.buscarProfessorPorTurma(Integer.parseInt(matricula));
+        String dataAgenda = consultaAlunoDAO.buscarDataDaTurmaDoAluno(matricula);
+        String horaAgenda = consultaAlunoDAO.buscarHorarioDaTurmaDoAluno(matricula);
+        String turnoAgenda = consultaAlunoDAO.buscarTurnoDaTurmaDoAluno(matricula);
 
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("/view/AlunoDesc.fxml")
@@ -152,15 +155,15 @@ public class AlunoController {
         controller.setMatricula(matricula);
         controller.setAlunoNome(alunonome);
 
-        /*controller.setSalaNumero(numeroSala);
+        controller.setSalaNumero(numeroSala);
         controller.setSalaBloco(blocoSala);
-        controller.setSalaCapacidade(capacidadeSala);
+        controller.setSalaCapacidade(String.valueOf(capacidadeSala));
         controller.setTurmaCurso(cursoTurma);
         controller.setTurmaQtndAlunos(qntdAlunosTurma);
         controller.setTurmaProfessor(professorTurma);
         controller.setAgendaData(dataAgenda);
         controller.setAgendaHora(horaAgenda);
-        controller.setAgendaTurno(turnoAgenda);*/
+        controller.setAgendaTurno(turnoAgenda);
 
         Stage stage = (Stage) ((Node) event.getSource())
                 .getScene()
@@ -207,6 +210,5 @@ public class AlunoController {
         txtMatricula.clear();
         txtTurma.clear();
     }
-
 
 }

@@ -31,7 +31,7 @@ public class TurmaDAOimpl implements TurmaDAO{
     }
 
     @Override
-    public void deleteAluno(Turma turma) throws SQLException {
+    public void deleteTurma(Turma turma) throws SQLException {
         PreparedStatement ps;
         ps = connection.prepareStatement("DELETE FROM TURMA WHERE ID_TURMA = ?");
         ps.setInt(1, turma.getId_turma());

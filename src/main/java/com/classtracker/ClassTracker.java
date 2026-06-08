@@ -33,7 +33,7 @@ public class ClassTracker extends Application {
         );
 
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/view/MainMenu.fxml")
+                getClass().getResource("/view/Reservas.fxml")
         );
 
         Scene scene = new Scene(loader.load());

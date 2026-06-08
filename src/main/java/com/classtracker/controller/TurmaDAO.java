@@ -9,7 +9,7 @@ public interface TurmaDAO {
 
     public void insertTurma(Turma turma) throws SQLException;
 
-    public void deleteAluno (Turma turma) throws SQLException;
+    public void deleteTurma(Turma turma) throws SQLException;
 
     public Turma getTurma(String idTurma) throws SQLException;
 

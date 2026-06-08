@@ -14,6 +14,12 @@ public class Turma {
         this.turno = turno;
     }
 
+    public Turma(String curso, int tamanho, String turno) {
+        this.curso = curso;
+        this.tamanho = tamanho;
+        this.turno = turno;
+    }
+
     public String getCurso() {
         return curso;
     }

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.07035175879396985" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #29c8d7;">
+         <children>
+            <Label layoutX="39.0" layoutY="-1.0" prefHeight="28.0" prefWidth="102.0" text="Class Tracker">
+               <font>
+                  <Font name="Dubai Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="44.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/ClassTrackerLogo1-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow radius="14.3975" width="38.59" />
+         </effect>
+      </AnchorPane>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="598.0">
+         <children>
+            <SplitPane dividerPositions="0.0943952802359882" layoutX="14.0" layoutY="14.0" orientation="VERTICAL" prefHeight="341.0" prefWidth="568.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Circle fill="#00d7ff" layoutX="14.4" layoutY="15.5" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                        <ImageView fitHeight="28.0" fitWidth="25.0" layoutX="2.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/relogio.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="37.0" layoutY="-3.0" prefHeight="17.0" prefWidth="102.0" text="Reservas">
+                           <font>
+                              <Font name="Dubai Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <Line endX="-2.5" layoutX="125.0" layoutY="23.0" startX="-93.0" stroke="#16bad7" />
+                        <Circle fill="#16bad7" layoutX="130.0" layoutY="22.7" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <SplitPane dividerPositions="0.29797979797979796" layoutY="-4.0" prefHeight="310.0" prefWidth="566.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <ChoiceBox fx:id="salaSelect" layoutX="8.0" layoutY="35.0" prefWidth="150.0" styleClass="salaMenuSelector" />
+                                    <ChoiceBox fx:id="turmaSelect" layoutX="8.0" layoutY="98.0" prefWidth="150.0" styleClass="turmaMenuSelector" />
+                                    <DatePicker fx:id="dataSelect" layoutX="10.0" layoutY="160.0" prefHeight="25.0" prefWidth="148.0" styleClass="dataMenuSelector" />
+                                    <Label layoutX="10.0" layoutY="16.0" text="Sala">
+                                       <font>
+                                          <Font name="Dubai Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="79.0" text="Turma">
+                                       <font>
+                                          <Font name="Dubai Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="141.0" text="Data">
+                                       <font>
+                                          <Font name="Dubai Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="horarioSelect" layoutX="11.0" layoutY="222.0" prefWidth="150.0" styleClass="horarioMenuSelector" />
+                                    <Label layoutX="11.0" layoutY="204.0" text="Horário">
+                                       <font>
+                                          <Font name="Dubai Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="criarReserva" layoutX="10.0" layoutY="273.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" styleClass="buttonCriarReservaClass" text="Button" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="164.0" prefWidth="168.0">
+                                 <children>
+                                    <TableView fx:id="tabelaReservas" layoutX="2.0" layoutY="1.0" prefHeight="304.0" prefWidth="393.0">
+                                      <columns>
+                                        <TableColumn fx:id="colSala" prefWidth="60.0" styleClass="salaColClass" text="Sala" />
+                                        <TableColumn fx:id="colTurma" prefWidth="60.0" styleClass="turmaColClass" text="Turma" />
+                                          <TableColumn fx:id="colData" prefWidth="60.0" styleClass="dataColClass" text="Data" />
+                                          <TableColumn fx:id="colHorario" prefWidth="75.0" styleClass="horarioColClass" text="Horário" />
+                                          <TableColumn fx:id="colResponsavel" prefWidth="75.0" styleClass="responsavelColClass" text="Responsável" />
+                                          <TableColumn fx:id="colStatus" prefWidth="60.0" styleClass="statusColClass" text="Status" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>
