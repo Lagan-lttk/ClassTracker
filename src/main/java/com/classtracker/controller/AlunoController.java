@@ -34,13 +34,13 @@ public class AlunoController {
     public Label salaBloco;
     public Label salaCapacidade;
     public Label turmaCurso;
-    public Label turmaQtndAlunos;
-    public Label turmaProfessor;
-    public Label agendaData;
-    public Label agendaHora;
-    public Label agendaTurno;
-    public Label listaAlunos;
-    public Label alunoMatricula;
+    @FXML public Label turmaQntdAlunos;
+    @FXML public Label turmaProfessor;
+    @FXML public Label agendaData;
+    @FXML public Label agendaHora;
+    @FXML public Label agendaTurno;
+    @FXML public Label listaAlunos;
+    @FXML public Label alunoMatricula;
 
 
     AlunoDAOImpl alunoDAO = new AlunoDAOImpl();
@@ -70,7 +70,7 @@ public class AlunoController {
         turmaCurso.setText(curso);
     }
     public void setTurmaQtndAlunos(String quantidadeAlunos) {
-        turmaQtndAlunos.setText(quantidadeAlunos);
+        turmaQntdAlunos.setText(quantidadeAlunos);
     }
     public void setTurmaProfessor(String professor) {
         turmaProfessor.setText(professor);
@@ -101,6 +101,11 @@ public class AlunoController {
 
     @FXML
     private void abrirMenu(MouseEvent event) throws IOException {
+        trocarTela("/view/AlunoDesc.fxml", event);
+    }
+
+    @FXML
+    private void abrirMenuMain(MouseEvent event) throws IOException {
         trocarTela("/view/MainMenu.fxml", event);
     }
 

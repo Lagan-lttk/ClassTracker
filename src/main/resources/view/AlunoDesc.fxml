@@ -139,7 +139,7 @@
                               <Label layoutX="18.0" layoutY="54.0" prefHeight="25.0" prefWidth="513.0" text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
                            </children>
                         </AnchorPane>
-                        <Label layoutX="244.0" layoutY="336.0" prefHeight="22.0" prefWidth="112.0" style="-fx-background-color: #3da6ad; -fx-background-radius: 24;" text="   ⬅ Voltar ao Menu" textFill="WHITE">
+                        <Label layoutX="244.0" onMouseClicked="#abrirMenuMain" layoutY="336.0" prefHeight="22.0" prefWidth="112.0" style="-fx-background-color: #3da6ad; -fx-background-radius: 24;" text="   ⬅ Voltar ao Menu" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="12.0" />
                            </font>

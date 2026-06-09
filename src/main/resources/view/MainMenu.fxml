@@ -74,7 +74,7 @@
                         <Image url="/images/Reserva-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="45.0" layoutY="301.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" onAction="#abrirMenu" style="-fx-background-radius: 50; -fx-background-color: #2DC8D6;" text="Entrar      ➡" textAlignment="CENTER" textFill="WHITE">
+                  <Button layoutX="45.0" layoutY="301.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" onAction="#abrirMenuReservas" style="-fx-background-radius: 50; -fx-background-color: #2DC8D6;" text="Entrar      ➡" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Dubai Bold" size="18.0" />
                      </font>
@@ -110,7 +110,7 @@
                         <Image url="/images/professorLogo-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="44.0" layoutY="300.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" onAction="#abrirMenu" style="-fx-background-radius: 50; -fx-background-color: #2DC8D6;" text="Entrar      ➡" textFill="WHITE">
+                  <Button layoutX="44.0" layoutY="300.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="163.0" onAction="#abrirMenuProfessor" style="-fx-background-radius: 50; -fx-background-color: #2DC8D6;" text="Entrar      ➡" textFill="WHITE">
                      <font>
                         <Font name="Dubai Bold" size="18.0" />
                      </font>

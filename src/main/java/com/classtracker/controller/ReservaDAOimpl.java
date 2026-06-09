@@ -92,4 +92,28 @@ public class ReservaDAOimpl implements ReservaDAO{
 
         return  listaReservas;
     }
+
+    public List<Reserva> listarTodasReservas() throws SQLException {
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM RESERVA");
+        ResultSet rs = ps.executeQuery();
+        List<Reserva> listaReservas = new ArrayList<>();
+
+        while(rs.next()){
+            // Criando o objeto completo vindo do banco
+            Reserva reserva = new Reserva(
+                    rs.getString("dia"),           // data
+                    rs.getString("descrição"),     // descricao
+                    rs.getString("horário"),       // horário
+                    rs.getInt("id_professor"),     // id_professor
+                    rs.getInt("id_sala"),          // id_sala
+                    rs.getInt("id_turma"),         // id_turma
+                    rs.getString("disponibilidade") // status
+            );
+            // Não se esqueça de setar o ID da reserva que vem do banco
+            reserva.setId_reserva(rs.getInt("id_reserva"));
+
+            listaReservas.add(reserva);
+        }
+        return listaReservas;
+    }
 }

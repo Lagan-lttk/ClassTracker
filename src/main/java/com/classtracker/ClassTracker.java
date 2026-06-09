@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ClassTracker extends Application {
     public static void main(String[] args) throws SQLException {
@@ -29,11 +30,11 @@ public class ClassTracker extends Application {
     public void start(Stage stage) throws Exception {
 
         stage.getIcons().add(
-                new Image(getClass().getResourceAsStream("/images/ClassTrackerLogo1-removebg-preview.png"))
+                new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/ClassTrackerLogo1-removebg-preview.png")))
         );
 
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/view/Reservas.fxml")
+                getClass().getResource("/view/MainMenu.fxml")
         );
 
         Scene scene = new Scene(loader.load());

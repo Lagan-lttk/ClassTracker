@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.07035175879396985" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane fx:controller="com.classtracker.controller.ReservaController" dividerPositions="0.07035175879396985" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
    <items>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #29c8d7;">
          <children>
@@ -41,7 +41,7 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
                         <Circle fill="#00d7ff" layoutX="14.4" layoutY="15.5" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-                        <ImageView fitHeight="28.0" fitWidth="25.0" layoutX="2.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView onMouseClicked="#abrirMenu"  fitHeight="28.0" fitWidth="25.0" layoutX="2.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/relogio.png" />
                            </image>
@@ -64,12 +64,12 @@
                                     <ChoiceBox fx:id="salaSelect" layoutX="8.0" layoutY="35.0" prefWidth="150.0" styleClass="salaMenuSelector" />
                                     <ChoiceBox fx:id="turmaSelect" layoutX="8.0" layoutY="98.0" prefWidth="150.0" styleClass="turmaMenuSelector" />
                                     <DatePicker fx:id="dataSelect" layoutX="10.0" layoutY="160.0" prefHeight="25.0" prefWidth="148.0" styleClass="dataMenuSelector" />
-                                    <Label layoutX="10.0" layoutY="16.0" text="Sala">
+                                    <Label onMouseClicked="#abrirMenuSala" layoutX="10.0" layoutY="16.0" text="Sala">
                                        <font>
                                           <Font name="Dubai Bold" size="12.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="10.0" layoutY="79.0" text="Turma">
+                                    <Label onMouseClicked="#abrirMenuTurma" layoutX="10.0" layoutY="79.0" text="Turma">
                                        <font>
                                           <Font name="Dubai Bold" size="12.0" />
                                        </font>
@@ -85,7 +85,7 @@
                                           <Font name="Dubai Bold" size="12.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="criarReserva" layoutX="10.0" layoutY="273.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" styleClass="buttonCriarReservaClass" text="Button" />
+                                    <Button fx:id="criarReserva" layoutX="10.0" layoutY="273.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" styleClass="buttonCriarReservaClass" text="Reservar" />
                                  </children>
                               </AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="164.0" prefWidth="168.0">

@@ -39,6 +39,16 @@ public class MenuController {
     }
 
     @FXML
+    private void abrirMenuProfessor(ActionEvent event) throws IOException {
+        trocarTela("/view/professorDesc.fxml", event);
+    }
+
+    @FXML
+    private void abrirMenuReservas(ActionEvent event) throws IOException {
+        trocarTela("/view/Reservas.fxml", event);
+    }
+
+    @FXML
     private void abrirMenu(ActionEvent event) throws IOException {
         trocarTela("/view/BoxChoice.fxml", event);
     }

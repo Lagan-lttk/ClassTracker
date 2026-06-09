@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.07035175879396985" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.07035175879396985" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.classtracker.controller.ProfessorController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #29c8d7;">
          <children>
@@ -24,7 +24,7 @@
             </Label>
             <ImageView fitHeight="39.0" fitWidth="44.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../ImagesSceneBuilder/ClassTrackerLogo1-removebg-preview.png" />
+                  <Image url="@../images/ClassTrackerLogo1-removebg-preview.png" />
                </image>
             </ImageView>
          </children>
@@ -39,17 +39,17 @@
                      <children>
                         <ImageView fitHeight="240.0" fitWidth="509.0" layoutX="25.0" layoutY="-63.0" pickOnBounds="true">
                            <image>
-                              <Image url="@../ImagesSceneBuilder/nuvem.png" />
+                              <Image url="@../images/nuvem.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="257.0" layoutY="16.0" text="Olá! Fulano">
+                        <Label fx:id="labelNomeProfessor" layoutX="257.0" layoutY="16.0" text="Olá! Fulano">
                            <font>
                               <Font name="Dubai Bold" size="23.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="58.0" fitWidth="55.0" layoutX="172.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView onMouseClicked="#abrirMenuAdmin" fitHeight="58.0" fitWidth="55.0" layoutX="172.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../ImagesSceneBuilder/diplomado.png" />
+                              <Image url="@../images/diplomado.png" />
                            </image>
                         </ImageView>
                         <HBox layoutX="24.0" layoutY="86.0" prefHeight="228.0" prefWidth="557.0">
@@ -66,10 +66,10 @@
                                     </Label>
                                     <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="60.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../ImagesSceneBuilder/sala-de-aula2.png" />
+                                          <Image url="@../images/sala-de-aula2.png" />
                                        </image>
                                     </ImageView>
-                                    <Label layoutX="46.0" layoutY="106.0" text="Labóratorio 12">
+                                    <Label  layoutX="46.0" layoutY="106.0" text="Labóratorio 12">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font></Label>
@@ -81,19 +81,19 @@
                                     <Line endX="92.0" layoutX="64.0" layoutY="168.0" startX="-57.0" stroke="#bcced0" />
                                     <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="9.6" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../ImagesSceneBuilder/sala-de-aula2.png" />
+                                          <Image url="@../images/sala-de-aula2.png" />
                                        </image>
                                     </ImageView>
                                     <Circle fill="#bdf5ff" layoutX="19.0" layoutY="151.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
                                     <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="9.6" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../ImagesSceneBuilder/sala-de-aula2.png" />
+                                          <Image url="@../images/sala-de-aula2.png" />
                                        </image>
                                     </ImageView>
                                     <Circle fill="#bdf5ff" layoutX="19.0" layoutY="186.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
                                     <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="9.6" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../ImagesSceneBuilder/sala-de-aula2.png" />
+                                          <Image url="@../images/sala-de-aula2.png" />
                                        </image>
                                     </ImageView>
                                     <Label layoutX="43.0" layoutY="184.0" text="Labóratorio 12">
@@ -128,7 +128,7 @@
                                     <Circle fill="#00d7ff" layoutX="79.0" layoutY="25.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
                                     <ImageView fitHeight="55.0" fitWidth="54.0" layoutX="52.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../ImagesSceneBuilder/grupo-de-usuarios2.png" />
+                                          <Image url="@../images/grupo-de-usuarios2.png" />
                                        </image>
                                     </ImageView>
                                     <Line endX="92.0" layoutX="64.0" layoutY="130.0" startX="-57.0" stroke="#bcced0" />
@@ -138,17 +138,17 @@
                                     <Circle fill="#bdf5ff" layoutX="21.0" layoutY="186.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
                                     <ImageView fitHeight="26.0" fitWidth="18.0" layoutX="10.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../ImagesSceneBuilder/grupo-de-usuarios2.png" />
+                                          <Image url="@../images/grupo-de-usuarios2.png" />
                                        </image>
                                     </ImageView>
                                     <ImageView fitHeight="26.0" fitWidth="18.0" layoutX="10.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../ImagesSceneBuilder/grupo-de-usuarios2.png" />
+                                          <Image url="@../images/grupo-de-usuarios2.png" />
                                        </image>
                                     </ImageView>
                                     <ImageView fitHeight="26.0" fitWidth="18.0" layoutX="11.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../ImagesSceneBuilder/grupo-de-usuarios2.png" />
+                                          <Image url="@../images/grupo-de-usuarios2.png" />
                                        </image>
                                     </ImageView>
                                     <Label layoutX="41.0" layoutY="177.0" text="Labóratorio 12">
@@ -175,7 +175,7 @@
                                     <Circle fill="#00d7ff" layoutX="75.0" layoutY="26.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
                                     <ImageView fitHeight="48.0" fitWidth="55.0" layoutX="51.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../ImagesSceneBuilder/relogio2.png" />
+                                          <Image url="@../images/relogio2.png" />
                                        </image>
                                     </ImageView>
                                     <Label layoutX="45.0" layoutY="58.0" text="Horário">
@@ -191,17 +191,17 @@
                                     <Circle fill="#bdf5ff" layoutX="20.0" layoutY="186.0" radius="13.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
                                     <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="12.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../ImagesSceneBuilder/relogio2.png" />
+                                          <Image url="@../images/relogio2.png" />
                                        </image>
                                     </ImageView>
                                     <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="12.0" layoutY="143.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../ImagesSceneBuilder/relogio2.png" />
+                                          <Image url="@../images/relogio2.png" />
                                        </image>
                                     </ImageView>
                                     <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="12.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../ImagesSceneBuilder/relogio2.png" />
+                                          <Image url="@../images/relogio2.png" />
                                        </image>
                                     </ImageView>
                                     <Label layoutX="42.0" layoutY="105.0" text="Labóratorio 12">

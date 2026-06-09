@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.07035175879396985" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.07035175879396985" fx:controller="com.classtracker.controller.ProfessorController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #29c8d7;">
          <children>
@@ -141,7 +141,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button layoutX="423.0" layoutY="323.0" mnemonicParsing="false" onAction="#EditarProfessor" styleClass="buttonDelete" text="Editar Aluno">
+                        <Button layoutX="423.0" layoutY="323.0" mnemonicParsing="false" onAction="#editarProfessor" styleClass="buttonDelete" text="Editar Aluno">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
